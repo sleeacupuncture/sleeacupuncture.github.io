@@ -522,9 +522,22 @@ nav {
 /* ── Bio Grid ── */
 .bio-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 1fr;
   gap: var(--space-xl);
   align-items: start;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .bio-grid {
+    grid-template-columns: 280px 1fr;
+    text-align: left;
+  }
+
+  .portrait-img {
+    width: 240px;
+    height: 240px;
+  }
 }
 
 .bio-portrait {
@@ -532,8 +545,8 @@ nav {
 }
 
 .portrait-img {
-  width: 240px;
-  height: 240px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
   margin: 0 auto var(--space-md);
@@ -608,9 +621,19 @@ nav {
 /* ── Conditions Groups ── */
 .conditions-groups {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-lg);
   margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 48rem) {
+  .conditions-groups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .signature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .conditions-group {
@@ -660,7 +683,7 @@ nav {
 /* ── Signature Cards ── */
 .signature-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-lg);
 }
 
