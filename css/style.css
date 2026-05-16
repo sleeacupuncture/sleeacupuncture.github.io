@@ -603,3 +603,148 @@ nav {
   font-size: var(--fs-sm);
   line-height: 1.7;
 }
+
+/* ── Reviews ── */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.review-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--color-review-accent);
+  transition: box-shadow .2s;
+}
+.review-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.review-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: var(--space-sm);
+  color: #D4A574;
+}
+
+.review-text {
+  font-size: var(--fs-base);
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  quotes: none;
+}
+.review-text::before { content: open-quote; }
+.review-text::after { content: close-quote; }
+
+.review-author {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* ── Contact Grid ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.contact-info h3,
+.contact-hours h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.contact-info address,
+.contact-info p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.8;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  margin-top: 3px;
+}
+
+.contact-ctas {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.contact-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius);
+  transition: all .2s;
+}
+
+.contact-cta-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.contact-cta-primary:hover {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.contact-cta-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+.contact-cta-secondary:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.hours-table {
+  width: 100%;
+}
+.hours-table td {
+  padding: var(--space-xs) 0;
+  font-size: var(--fs-base);
+}
+.hours-table td:first-child {
+  font-weight: 500;
+  color: var(--color-text);
+  width: 40%;
+}
+.hours-table td:last-child {
+  color: var(--color-text-muted);
+}
+.hours-appt {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+/* ── Map ── */
+.map-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
