@@ -15,3 +15,8 @@ opencode.json
 
 # logs
 *.log
+
+# dev tools
+.claude/
+.impeccable/
+.impeccable-critique-temp*.md
