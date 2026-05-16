@@ -830,62 +830,6 @@ nav {
   margin-top: var(--space-2xs);
 }
 
-.contact-ctas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-xl);
-}
-
-@media (min-width: 48rem) {
-  .contact-ctas {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-}
-
-.contact-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: var(--fs-base);
-  white-space: normal;
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius);
-  transition: all .2s;
-  width: 100%;
-}
-
-@media (min-width: 40rem) {
-  .contact-cta {
-    width: auto;
-    white-space: nowrap;
-  }
-}
-
-.contact-cta-primary {
-  background: var(--color-primary);
-  color: var(--color-white);
-}
-.contact-cta-primary:hover {
-  background: var(--color-primary-dark);
-  color: var(--color-white);
-}
-
-.contact-cta-secondary {
-  background: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-}
-.contact-cta-secondary:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
-}
-
 .hours-table {
   width: 100%;
 }
