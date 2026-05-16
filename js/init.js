@@ -77,4 +77,18 @@
 
   window.addEventListener('scroll', updateActiveNav, { passive: true });
   updateActiveNav();
+
+  // Floating CTA visibility on scroll
+  var floatingCta = document.querySelector('.floating-cta');
+  if (floatingCta) {
+    function toggleFloatingCta() {
+      if (window.scrollY > 200) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+    }
+    window.addEventListener('scroll', toggleFloatingCta, { passive: true });
+    toggleFloatingCta();
+  }
 })();
