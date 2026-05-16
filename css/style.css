@@ -1048,14 +1048,10 @@ footer {
   font-weight: 500;
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius);
-  border: 1px solid var(--color-border);
-  transition: all .2s;
+  transition: color .2s;
 }
 .footer-nav a:hover {
   color: var(--color-primary);
-  border-color: var(--color-primary);
 }
 
 .footer-copy {
