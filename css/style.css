@@ -145,7 +145,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--nav-height);
+  min-height: var(--nav-height);
 }
 
 .nav-brand {
@@ -161,12 +161,14 @@ nav {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
+  flex-wrap: nowrap;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
+  flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -176,6 +178,7 @@ nav {
   color: var(--color-text-muted);
   letter-spacing: .5px;
   text-transform: uppercase;
+  white-space: nowrap;
   padding: var(--space-xs) 0;
   border-bottom: 2px solid transparent;
   transition: color .2s, border-color .2s;
@@ -190,6 +193,7 @@ nav {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  flex-shrink: 0;
 }
 
 .nav-cta {
