@@ -284,6 +284,7 @@ nav {
     display: flex;
     position: static;
     flex-direction: row;
+    align-items: center;
     background: none;
     padding: 0;
     gap: 0;
@@ -293,6 +294,7 @@ nav {
 
   .nav-links {
     flex-direction: row;
+    align-items: center;
     gap: var(--space-lg);
   }
 
@@ -306,6 +308,7 @@ nav {
 
   .nav-ctas {
     flex-direction: row;
+    align-items: center;
     width: auto;
   }
 
