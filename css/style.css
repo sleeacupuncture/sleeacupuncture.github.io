@@ -637,7 +637,7 @@ nav {
   display: flex;
   gap: 4px;
   margin-bottom: var(--space-sm);
-  color: #D4A574;
+  color: var(--color-accent);
 }
 
 .review-text {
@@ -817,6 +817,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: color .2s;
+}
+.faq-item summary:hover {
+  color: var(--color-primary);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -873,11 +877,6 @@ footer {
 }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-  .reviews-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 @media (max-width: 768px) {
   :root {
