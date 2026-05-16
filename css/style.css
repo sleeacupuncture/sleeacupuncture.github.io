@@ -319,7 +319,7 @@ nav {
 /* ── Hero ── */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -380,7 +380,8 @@ nav {
 
 .hero-ctas {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: var(--space-sm);
   margin-bottom: var(--space-xl);
 }
@@ -388,6 +389,7 @@ nav {
 .hero-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-family: var(--font-heading);
   font-weight: 600;
@@ -395,6 +397,7 @@ nav {
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--radius);
   transition: all .2s;
+  width: 100%;
 }
 
 .hero-cta-primary {
@@ -415,6 +418,22 @@ nav {
   background: rgba(255,255,255,.15);
   border-color: var(--color-white);
   color: var(--color-white);
+}
+
+@media (min-width: 40rem) {
+  .hero-cta {
+    width: auto;
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero-ctas {
+    flex-direction: row;
+  }
+
+  .hero {
+    min-height: 100vh;
+  }
 }
 
 .hero-scroll {
