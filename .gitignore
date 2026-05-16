@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# IDE / editor configs
+.opencode*
+opencode.json
+.vscode/
+.idea/
+
+# temp files
+*.swp
+*.swo
+*~
+
+# logs
+*.log
