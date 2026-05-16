@@ -28,12 +28,13 @@
   --fs-2xl: 1.5rem;
   --fs-3xl: 1.625rem;
 
+  --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2.5rem;
   --space-xl: 4rem;
-  --space-2xl: 3rem;
+  --space-2xl: clamp(3rem, 0.5rem + 8vw, 6rem);
 
   --radius: 8px;
   --radius-lg: 12px;
@@ -48,7 +49,6 @@
 @media (min-width: 40rem) {
   :root {
     --fs-3xl: 2rem;
-    --space-2xl: 4rem;
   }
 }
 
@@ -56,7 +56,6 @@
   :root {
     --fs-3xl: 2.75rem;
     --fs-2xl: 2rem;
-    --space-2xl: 6rem;
   }
 }
 
@@ -219,7 +218,7 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: var(--space-xs);
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: var(--fs-sm);
@@ -254,7 +253,7 @@ nav {
   border: none;
   cursor: pointer;
   padding: var(--space-xs);
-  gap: 5px;
+  gap: var(--space-2xs);
   flex-direction: column;
 }
 
@@ -390,7 +389,7 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-xs);
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: var(--fs-base);
@@ -456,8 +455,17 @@ nav {
   padding: var(--space-2xl) 0;
 }
 
+#drlee_clinic {
+  padding-bottom: var(--space-xl);
+}
+
 #reviews {
+  padding: var(--space-2xl) 0;
+}
+
+#faq {
   padding: var(--space-xl) 0;
+  background: var(--color-bg-alt);
 }
 
 #contact {
@@ -493,7 +501,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
+  gap: var(--space-2xs);
   margin-bottom: var(--space-xl);
 }
 
@@ -504,7 +512,7 @@ nav {
   font-size: 0.8125rem;
   color: var(--color-primary);
   background: var(--color-bg-alt);
-  padding: 4px 12px;
+  padding: var(--space-2xs) 0.75rem;
   border-radius: 100px;
   border: 1px solid var(--color-border);
   transition: background .2s, color .2s;
@@ -517,7 +525,7 @@ nav {
 
   .tag {
     font-size: var(--fs-sm);
-    padding: 6px 16px;
+    padding: var(--space-2xs) 1rem;
   }
 }
 
@@ -590,7 +598,7 @@ nav {
 .bio-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-xs);
   margin-top: var(--space-md);
   font-family: var(--font-heading);
   font-weight: 600;
@@ -625,7 +633,7 @@ nav {
 .bio-notes dd {
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
-  margin-top: 4px;
+  margin-top: var(--space-2xs);
   padding-left: var(--space-sm);
 }
 
@@ -754,7 +762,7 @@ nav {
 
 .review-stars {
   display: flex;
-  gap: 4px;
+  gap: var(--space-2xs);
   margin-bottom: var(--space-sm);
   color: var(--color-accent);
 }
@@ -813,13 +821,13 @@ nav {
   line-height: 1.8;
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: calc(var(--space-xs) + var(--space-2xs));
 }
 
 .contact-icon {
   flex-shrink: 0;
   color: var(--color-primary);
-  margin-top: 3px;
+  margin-top: var(--space-2xs);
 }
 
 .contact-ctas {
@@ -827,7 +835,7 @@ nav {
   flex-direction: column;
   align-items: center;
   gap: var(--space-sm);
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 
 @media (min-width: 48rem) {
@@ -841,7 +849,7 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-xs);
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: var(--fs-base);
