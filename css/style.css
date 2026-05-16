@@ -173,30 +173,35 @@ nav {
 .nav-brand:hover { color: var(--color-primary); }
 
 .nav-menu {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  flex-wrap: nowrap;
+  display: none;
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  background: var(--color-white);
+  padding: var(--space-md);
+  gap: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
 }
 
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
 .nav-link {
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-base);
   color: var(--color-text-muted);
-  letter-spacing: .5px;
-  text-transform: uppercase;
+  text-transform: none;
   white-space: nowrap;
-  padding: var(--space-xs) 0;
-  border-bottom: 2px solid transparent;
-  transition: color .2s, border-color .2s;
+  padding: var(--space-sm);
+  border-bottom: none;
+  transition: color .2s;
 }
 .nav-link:hover,
 .nav-link.active {
@@ -206,14 +211,14 @@ nav {
 
 .nav-ctas {
   display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  flex-shrink: 0;
+  flex-direction: column;
+  width: 100%;
 }
 
 .nav-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   font-family: var(--font-heading);
   font-weight: 600;
@@ -221,6 +226,7 @@ nav {
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius);
   transition: all .2s;
+  width: 100%;
 }
 
 .nav-cta-primary {
@@ -243,7 +249,7 @@ nav {
 }
 
 .nav-toggle {
-  display: none;
+  display: flex;
   background: none;
   border: none;
   cursor: pointer;
@@ -268,6 +274,46 @@ nav {
 }
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (min-width: 64rem) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+    gap: 0;
+    border-bottom: none;
+    box-shadow: none;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+
+  .nav-link {
+    font-size: var(--fs-sm);
+    text-transform: uppercase;
+    padding: var(--space-xs) 0;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+  }
+
+  .nav-ctas {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .nav-cta {
+    width: auto;
+    justify-content: initial;
+  }
 }
 
 /* ── Hero ── */
