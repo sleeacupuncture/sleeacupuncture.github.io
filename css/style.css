@@ -714,6 +714,7 @@ nav {
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: var(--fs-base);
+  white-space: nowrap;
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--radius);
   transition: all .2s;
@@ -904,13 +905,7 @@ footer {
 
 /* ── Responsive ── */
 
-@media (max-width: 768px) {
-  :root {
-    --fs-3xl: 2rem;
-    --fs-2xl: 1.5rem;
-    --space-2xl: 4rem;
-  }
-
+@media (max-width: 1024px) {
   .nav-toggle { display: flex; }
 
   .nav-menu {
@@ -951,6 +946,22 @@ footer {
     width: 100%;
   }
 
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-ctas {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-3xl: 2rem;
+    --fs-2xl: 1.5rem;
+    --space-2xl: 4rem;
+  }
+
   .hero-ctas {
     flex-direction: column;
     align-items: center;
@@ -976,14 +987,6 @@ footer {
 
   .reviews-grid {
     grid-template-columns: 1fr;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-ctas {
-    flex-direction: column;
   }
 
   .map-container {
