@@ -1,4 +1,4 @@
-# CTA + Contact Grid 모바일 우선 전환 설계
+# 전체 반응형 모바일 우선 전환 설계
 
 ## 배경
 
@@ -6,7 +6,7 @@
 
 ## 목표
 
-Hero CTA, Contact CTA, Contact Grid를 Tailwind v4 브레이크포인트에 맞춰 모바일 우선(`min-width`)으로 전환한다.
+모든 반응형 규칙을 Tailwind v4 브레이크포인트에 맞춰 모바일 우선(`min-width`)으로 전환한다.
 
 ## 브레이크포인트 기준
 
@@ -23,9 +23,30 @@ Tailwind v4 기본값 사용:
 
 ## 변경 사항
 
-### 1. Hero CTA
+### 1. 폰트/스페이싱 토큰
 
-기본(모바일) 스타일을 세로 스택 + 100% 폭으로 설정하고, `min-width` 쿼리로 점진 확장한다.
+`:root` 기본값을 모바일 기준으로 변경하고, `min-width`로 점진 확장한다.
+
+| 토큰 | 모바일 (<640) | ≥640px (sm) | ≥768px (md) | ≥1024px (lg) |
+|------|-------------|-------------|-------------|-------------|
+| `--fs-3xl` | 1.625rem | 2rem | — | 2.75rem |
+| `--fs-2xl` | 1.5rem | — | — | 2rem |
+| `--space-2xl` | 3rem | 4rem | — | 6rem |
+
+`≥1024px`에서만 최대 값으로 복원된다. `≥768px`에서는 sm 값이 그대로 유지된다.
+
+### 2. Navigation
+
+| 속성 | 모바일 (<1024) | ≥1024px (lg) |
+|------|--------------|-------------|
+| `.nav-toggle` | `display: flex` | `display: none` |
+| `.nav-menu` | 숨김/드롭다운 (absolute) | `display: flex` 인라인 |
+| `.nav-links` | column, gap sm | row, gap lg |
+| `.nav-ctas` | column, 100% | row |
+| `.nav-cta` | 100% 폭, 중앙 | auto 폭 |
+| `.nav-link` | 대문자 없음, 기본 폰트 | uppercase, 작은 폰트 |
+
+### 3. Hero CTA
 
 | 속성 | 모바일 (<640) | ≥640px (sm) | ≥768px (md) |
 |------|-------------|-------------|-------------|
@@ -63,9 +84,31 @@ Tailwind v4 기본값 사용:
 }
 ```
 
-### 2. Contact Grid
+### 4. Hero
 
-기본을 1칸으로 설정하고, `≥768px`에서 2칸으로 확장한다.
+| 속성 | 모바일 (<768) | ≥768px (md) |
+|------|-------------|-------------|
+| `.hero` min-height | 80vh | 100vh |
+
+### 5. Bio Grid
+
+| 속성 | 모바일 (<768) | ≥768px (md) |
+|------|-------------|-------------|
+| `.bio-grid` | `1fr`, text-align center | `280px 1fr`, text-align left |
+| `.portrait-img` | 200×200px | 240×240px |
+
+### 6. Conditions / Signature Grids
+
+| 속성 | 모바일 (<768) | ≥768px (md) |
+|------|-------------|-------------|
+| `.conditions-groups` | `1fr` | `repeat(2, 1fr)` |
+| `.signature-grid` | `1fr` | `repeat(2, 1fr)` |
+
+### 7. Reviews Grid
+
+`.reviews-grid`는 현재 `grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))`로 유동적이다. 기존 `≤768px`에서 강제 1칸 규칙을 제거하면 자연스럽게 반응하므로, 별도 `min-width` 규칙이 필요 없다.
+
+### 8. Contact Grid
 
 | 속성 | 모바일 (<768) | ≥768px (md) |
 |------|-------------|-------------|
@@ -88,9 +131,7 @@ Tailwind v4 기본값 사용:
 }
 ```
 
-### 3. Contact CTA
-
-기본을 세로 스택 + 100% 폭으로 설정하고, 점진 확장한다.
+### 9. Contact CTA
 
 | 속성 | 모바일 (<640) | ≥640px (sm) | ≥768px (md) |
 |------|-------------|-------------|-------------|
@@ -100,46 +141,35 @@ Tailwind v4 기본값 사용:
 | `.contact-cta` 정렬 | center | center | start |
 | `.contact-cta` white-space | normal | nowrap | nowrap |
 
-```css
-.contact-ctas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-lg);
-}
+### 10. Map Container
 
-.contact-cta {
-  width: 100%;
-  justify-content: center;
-  white-space: normal;
-  /* 기존 inline-flex, gap, font, padding, radius, transition 유지 */
-}
+| 속성 | 모바일 (<768) | ≥768px (md) |
+|------|-------------|-------------|
+| `.map-container` aspect-ratio | 4/3 | 16/9 |
 
-@media (min-width: 640px) {
-  .contact-cta {
-    width: auto;
-    white-space: nowrap;
-  }
-}
+### 11. Floating CTA
 
-@media (min-width: 768px) {
-  .contact-ctas {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-}
-```
+| 속성 | 모바일 (<768) | ≥768px (md) |
+|------|-------------|-------------|
+| bottom/right | var(--space-sm) | var(--space-lg) |
 
-### 4. 기존 max-width에서 제거할 규칙
+### 12. Treatments / Tags
 
-다음 셀렉터를 기존 `max-width` 블록에서 삭제한다:
+| 속성 | 모바일 (<640) | ≥640px (sm) |
+|------|-------------|-------------|
+| `.treatments` gap | 6px | var(--space-xs) |
+| `.tag` font-size | 0.8125rem | var(--fs-sm) |
+| `.tag` padding | 4px 12px | 6px 16px |
 
-- `@media (max-width: 1024px)` 안의 `.contact-grid` 규칙
-- `@media (max-width: 1024px)` 안의 `.contact-ctas` 규칙
-- `@media (max-width: 768px)` 안의 `.hero-ctas` 규칙
-- `@media (max-width: 480px)` 안의 `.hero-cta` 규칙
+### 13. 기존 max-width 블록 전면 제거
 
-### 5. 일관성 메모
+기존 반응형 섹션(908–1025행)의 모든 `max-width` 규칙을 제거하고, 각 컴포넌트 기본 스타일 아래에 `min-width` 쿼리로 재배치한다. 결과적으로 파일 끝의 `/* ── Responsive ── */` 섹션 전체가 사라진다.
 
-nav, bio-grid, conditions-groups, signature-grid, reviews-grid, floating-cta, 폰트 토큰 등은 여전히 `max-width` 기반이다. 이후 전체를 모바일 우선으로 전환할 때 일관성 있게 처리한다.
+### 브레이크포인트 요약
+
+| min-width | 커버하는 변경 |
+|-----------|-------------|
+| 기본 | 모바일 기본값 (작은 폰트, 세로 레이아웃, 1칸 그리드, 햄버거 메뉴) |
+| 640px (sm) | 태그/CTA 폭 확장, 스페이싱 증가, 폰트 토큰 중간값 |
+| 768px (md) | 2칸 그리드, 가로 CTA, 히어로 전체 높이, 지도 16:9, 바이오 2칸 |
+| 1024px (lg) | 데스크톱 네비게이션, 최대 폰트/스페이싱 토큰 |
