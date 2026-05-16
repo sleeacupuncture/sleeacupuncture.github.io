@@ -287,7 +287,7 @@ nav {
     align-items: center;
     background: none;
     padding: 0;
-    gap: 0;
+    gap: var(--space-xl);
     border-bottom: none;
     box-shadow: none;
   }
@@ -295,7 +295,7 @@ nav {
   .nav-links {
     flex-direction: row;
     align-items: center;
-    gap: var(--space-lg);
+    gap: var(--space-xl);
   }
 
   .nav-link {
@@ -309,6 +309,7 @@ nav {
   .nav-ctas {
     flex-direction: row;
     align-items: center;
+    gap: var(--space-xs);
     width: auto;
   }
 
