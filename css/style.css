@@ -625,13 +625,13 @@ nav {
 .bio-notes dt {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-lg);
   color: var(--color-primary);
   margin-top: var(--space-sm);
 }
 .bio-notes dt:first-child { margin-top: 0; }
 .bio-notes dd {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-base);
   color: var(--color-text-muted);
   margin-top: var(--space-2xs);
   padding-left: var(--space-sm);
