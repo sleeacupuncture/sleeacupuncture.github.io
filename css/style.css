@@ -2,24 +2,24 @@
 
 /* ── Design Tokens ── */
 :root {
-  --color-primary: #4A7A50;
-  --color-primary-dark: #3A5A40;
-  --color-primary-light: #7A9A7F;
-  --color-accent: #B8785E;
-  --color-accent-dark: #9A6048;
-  --color-bg: #FBF8F3;
-  --color-bg-alt: #F4EFE7;
-  --color-dark: #2C3E35;
+  --color-primary: #4a7a50;
+  --color-primary-dark: #3a5a40;
+  --color-primary-light: #7a9a7f;
+  --color-accent: #b8785e;
+  --color-accent-dark: #9a6048;
+  --color-bg: #fbf8f3;
+  --color-bg-alt: #f4efe7;
+  --color-dark: #2c3e35;
   --color-dark-alt: #243029;
-  --color-text: #3A3632;
-  --color-text-muted: #7A7570;
-  --color-text-light: rgba(255,255,255,.85);
-  --color-border: #E8E2DA;
+  --color-text: #3a3632;
+  --color-text-muted: #7a7570;
+  --color-text-light: rgba(255, 255, 255, 0.85);
+  --color-border: #e8e2da;
   --color-white: #fff;
-  --color-review-accent: #4A7A50;
+  --color-review-accent: #4a7a50;
 
-  --font-heading: 'Montserrat', system-ui, sans-serif;
-  --font-body: 'Source Sans 3', system-ui, sans-serif;
+  --font-heading: "Montserrat", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
 
   --fs-base: 1.125rem;
   --fs-sm: 0.875rem;
@@ -38,9 +38,9 @@
 
   --radius: 8px;
   --radius-lg: 12px;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
-  --shadow-md: 0 4px 12px rgba(0,0,0,.1);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,.12);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 
   --nav-height: 64px;
   --container-max: 1080px;
@@ -60,7 +60,13 @@
 }
 
 /* ── Reset ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
@@ -76,11 +82,26 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; height: auto; display: block; }
-a { color: var(--color-primary); text-decoration: none; transition: color .2s; }
-a:hover { color: var(--color-primary-dark); }
-ul, ol { list-style: none; }
-address { font-style: normal; }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--color-primary-dark);
+}
+ul,
+ol {
+  list-style: none;
+}
+address {
+  font-style: normal;
+}
 
 /* ── Skip Link ── */
 .skip-link {
@@ -94,7 +115,7 @@ address { font-style: normal; }
   border-radius: var(--radius);
   z-index: 1000;
   font-weight: 500;
-  transition: top .2s;
+  transition: top 0.2s;
 }
 .skip-link:focus {
   top: var(--space-sm);
@@ -111,7 +132,9 @@ address { font-style: normal; }
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity .6s ease, transform .6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 .reveal.revealed {
   opacity: 1;
@@ -125,8 +148,14 @@ address { font-style: normal; }
     animation-range: entry 0% entry 60%;
   }
   @keyframes reveal-fade {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -159,6 +188,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-lg);
   min-height: var(--nav-height);
 }
 
@@ -169,7 +199,9 @@ nav {
   color: var(--color-text);
   white-space: nowrap;
 }
-.nav-brand:hover { color: var(--color-primary); }
+.nav-brand:hover {
+  color: var(--color-primary);
+}
 
 .nav-menu {
   display: none;
@@ -200,7 +232,7 @@ nav {
   white-space: nowrap;
   padding: var(--space-sm);
   border-bottom: none;
-  transition: color .2s;
+  transition: color 0.2s;
 }
 .nav-link:hover,
 .nav-link.active {
@@ -223,8 +255,8 @@ nav {
   font-weight: 600;
   font-size: var(--fs-sm);
   padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius);
-  transition: all .2s;
+  border-radius: 100px;
+  transition: all 0.2s;
   width: 100%;
 }
 
@@ -262,7 +294,9 @@ nav {
   height: 2px;
   background: var(--color-text);
   border-radius: 2px;
-  transition: transform .2s, opacity .2s;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
@@ -295,7 +329,7 @@ nav {
   .nav-links {
     flex-direction: row;
     align-items: center;
-    gap: var(--space-xl);
+    gap: var(--space-md);
   }
 
   .nav-link {
@@ -303,7 +337,9 @@ nav {
     text-transform: uppercase;
     padding: var(--space-xs) 0;
     border-bottom: 2px solid transparent;
-    transition: color .2s, border-color .2s;
+    transition:
+      color 0.2s,
+      border-color 0.2s;
   }
 
   .nav-ctas {
@@ -347,7 +383,12 @@ nav {
   position: absolute;
   inset: 0;
   background-color: var(--color-dark);
-  background: linear-gradient(180deg, rgba(44,62,53,0.7) 0%, rgba(44,62,53,0.5) 50%, rgba(44,62,53,0.7) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(44, 62, 53, 0.7) 0%,
+    rgba(44, 62, 53, 0.5) 50%,
+    rgba(44, 62, 53, 0.7) 100%
+  );
   z-index: 1;
 }
 
@@ -362,7 +403,7 @@ nav {
   margin: 0 auto var(--space-lg);
   width: 80px;
   height: 80px;
-  filter: brightness(0) invert(1) opacity(.9);
+  filter: brightness(0) invert(1) opacity(0.9);
 }
 
 .hero-title {
@@ -376,7 +417,7 @@ nav {
 
 .hero-subtitle {
   font-size: var(--fs-lg);
-  color: rgba(255,255,255,.8);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: var(--space-xl);
   font-weight: 400;
 }
@@ -398,8 +439,8 @@ nav {
   font-weight: 600;
   font-size: var(--fs-base);
   padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius);
-  transition: all .2s;
+  border-radius: 100px;
+  transition: all 0.2s;
   width: 100%;
 }
 
@@ -415,10 +456,10 @@ nav {
 .hero-cta-secondary {
   background: transparent;
   color: var(--color-white);
-  border: 2px solid rgba(255,255,255,.6);
+  border: 2px solid rgba(255, 255, 255, 0.6);
 }
 .hero-cta-secondary:hover {
-  background: rgba(255,255,255,.15);
+  background: rgba(255, 255, 255, 0.15);
   border-color: var(--color-white);
   color: var(--color-white);
 }
@@ -444,14 +485,24 @@ nav {
   bottom: var(--space-xl);
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(255,255,255,.6);
+  color: rgba(255, 255, 255, 0.6);
   animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-  40% { transform: translateX(-50%) translateY(10px); }
-  60% { transform: translateX(-50%) translateY(5px); }
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(5px);
+  }
 }
 
 /* ── Sections ── */
@@ -477,7 +528,11 @@ nav {
 }
 
 .section-dark {
-  background: linear-gradient(160deg, var(--color-dark) 0%, var(--color-dark-alt) 100%);
+  background: linear-gradient(
+    160deg,
+    var(--color-dark) 0%,
+    var(--color-dark-alt) 100%
+  );
   color: var(--color-text-light);
 }
 
@@ -519,7 +574,9 @@ nav {
   padding: var(--space-2xs) 0.75rem;
   border-radius: 100px;
   border: 1px solid var(--color-border);
-  transition: background .2s, color .2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 @media (min-width: 40rem) {
@@ -534,12 +591,12 @@ nav {
 }
 
 .section-dark .tag {
-  color: rgba(255,255,255,.85);
-  background: rgba(255,255,255,.1);
-  border-color: rgba(255,255,255,.15);
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 .section-dark .tag:hover {
-  background: rgba(255,255,255,.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* ── Bio Grid ── */
@@ -610,8 +667,8 @@ nav {
   color: var(--color-primary);
   padding: var(--space-xs) var(--space-md);
   border: 1px solid var(--color-primary);
-  border-radius: var(--radius);
-  transition: all .2s;
+  border-radius: 100px;
+  transition: all 0.2s;
 }
 .bio-cta:hover {
   background: var(--color-primary);
@@ -633,7 +690,9 @@ nav {
   color: var(--color-primary);
   margin-top: var(--space-sm);
 }
-.bio-notes dt:first-child { margin-top: 0; }
+.bio-notes dt:first-child {
+  margin-top: 0;
+}
 .bio-notes dd {
   font-size: var(--fs-base);
   color: var(--color-text-muted);
@@ -660,8 +719,8 @@ nav {
 }
 
 .conditions-group {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   padding: var(--space-md);
 }
@@ -670,12 +729,12 @@ nav {
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: var(--fs-sm);
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: var(--space-sm);
   padding-bottom: var(--space-xs);
-  border-bottom: 1px solid rgba(255,255,255,.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .conditions-group .treatments {
@@ -694,13 +753,13 @@ nav {
   font-weight: 600;
   font-size: var(--fs-lg);
   margin-bottom: var(--space-sm);
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .bloodflow p {
   margin-bottom: var(--space-sm);
   line-height: 1.8;
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ── Signature Cards ── */
@@ -711,14 +770,16 @@ nav {
 }
 
 .signature-card {
-  background: rgba(255,255,255,.12);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.1);
-  transition: border-color .2s, box-shadow .2s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 .signature-card:hover {
-  border-color: rgba(255,255,255,.25);
+  border-color: rgba(255, 255, 255, 0.25);
   box-shadow: var(--shadow-lg);
 }
 
@@ -736,12 +797,12 @@ nav {
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: var(--fs-lg);
-  color: rgba(255,255,255,.95);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: var(--space-sm);
 }
 
 .signature-body p {
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, 0.7);
   font-size: var(--fs-base);
   line-height: 1.7;
 }
@@ -758,7 +819,7 @@ nav {
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   box-shadow: var(--shadow-sm);
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
 }
 .review-card:hover {
   box-shadow: var(--shadow-md);
@@ -778,8 +839,12 @@ nav {
   margin-bottom: var(--space-sm);
   quotes: none;
 }
-.review-text::before { content: open-quote; }
-.review-text::after { content: close-quote; }
+.review-text::before {
+  content: open-quote;
+}
+.review-text::after {
+  content: close-quote;
+}
 
 .review-author {
   font-size: var(--fs-sm);
@@ -887,7 +952,10 @@ nav {
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-lg);
-  transition: opacity .3s, transform .3s, background .2s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s,
+    background 0.2s;
   opacity: 0;
   transform: scale(0.8);
   pointer-events: none;
@@ -931,7 +999,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: color .2s;
+  transition: color 0.2s;
 }
 .faq-item summary:hover {
   color: var(--color-primary);
@@ -942,14 +1010,14 @@ nav {
 }
 
 .faq-item summary::after {
-  content: '+';
+  content: "+";
   font-size: var(--fs-lg);
   color: var(--color-primary);
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .faq-item[open] summary::after {
-  content: '\2212';
+  content: "\2212";
 }
 
 .faq-item p {
@@ -976,7 +1044,7 @@ footer {
 
 .footer-contact a {
   color: var(--color-primary);
-  transition: color .2s;
+  transition: color 0.2s;
 }
 
 .footer-contact a:hover {
@@ -1000,7 +1068,7 @@ footer {
   font-weight: 500;
   font-size: var(--fs-sm);
   color: var(--color-text-muted);
-  transition: color .2s;
+  transition: color 0.2s;
 }
 .footer-nav a:hover {
   color: var(--color-primary);
