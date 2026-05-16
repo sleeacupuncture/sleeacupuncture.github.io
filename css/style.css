@@ -2,9 +2,9 @@
 
 /* ── Design Tokens ── */
 :root {
-  --color-primary: #6B8F71;
-  --color-primary-dark: #4A6B50;
-  --color-primary-light: #8BAF8F;
+  --color-primary: #4A7A50;
+  --color-primary-dark: #3A5A40;
+  --color-primary-light: #7A9A7F;
   --color-accent: #B8785E;
   --color-accent-dark: #9A6048;
   --color-bg: #FBF8F3;
@@ -12,14 +12,14 @@
   --color-dark: #2C3E35;
   --color-dark-alt: #243029;
   --color-text: #3A3632;
-  --color-text-muted: #8A8580;
+  --color-text-muted: #7A7570;
   --color-text-light: rgba(255,255,255,.85);
   --color-border: #E8E2DA;
   --color-white: #fff;
-  --color-review-accent: #6B8F71;
+  --color-review-accent: #4A7A50;
 
   --font-heading: 'Montserrat', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
 
   --fs-base: 1.125rem;
   --fs-sm: 0.875rem;
@@ -122,6 +122,9 @@ address { font-style: normal; }
     transform: none;
     animation: none;
     transition: none;
+  }
+  .hero-scroll {
+    animation: none;
   }
 }
 
@@ -274,6 +277,7 @@ nav {
 .hero-overlay {
   position: absolute;
   inset: 0;
+  background-color: var(--color-dark);
   background: linear-gradient(180deg, rgba(44,62,53,0.7) 0%, rgba(44,62,53,0.5) 50%, rgba(44,62,53,0.7) 100%);
   z-index: 1;
 }
@@ -365,6 +369,14 @@ nav {
 /* ── Sections ── */
 .section {
   padding: var(--space-2xl) 0;
+}
+
+#reviews {
+  padding: var(--space-xl) 0;
+}
+
+#contact {
+  padding-bottom: 0;
 }
 
 .section-dark {
@@ -491,7 +503,6 @@ nav {
   padding: var(--space-md);
   background: var(--color-bg-alt);
   border-radius: var(--radius);
-  border-left: 3px solid var(--color-primary);
 }
 
 .bio-notes dt {
@@ -569,7 +580,7 @@ nav {
 }
 
 .signature-card {
-  background: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.12);
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.1);
@@ -607,7 +618,7 @@ nav {
 /* ── Reviews ── */
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-lg);
 }
 
@@ -616,7 +627,6 @@ nav {
   border-radius: var(--radius-lg);
   padding: var(--space-md);
   box-shadow: var(--shadow-sm);
-  border-left: 3px solid var(--color-review-accent);
   transition: box-shadow .2s;
 }
 .review-card:hover {
@@ -644,6 +654,12 @@ nav {
   font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--color-text-muted);
+}
+
+.review-condition {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 /* ── Contact Grid ── */
@@ -778,6 +794,50 @@ nav {
   background: var(--color-primary-dark);
   color: var(--color-white);
   transform: scale(1.05);
+}
+
+/* ── FAQ ── */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-item summary {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  padding: var(--space-md) 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: var(--fs-lg);
+  color: var(--color-primary);
+  transition: transform .2s;
+}
+
+.faq-item[open] summary::after {
+  content: '\2212';
+}
+
+.faq-item p {
+  padding-bottom: var(--space-md);
+  color: var(--color-text-muted);
+  line-height: 1.7;
 }
 
 /* ── Footer ── */
