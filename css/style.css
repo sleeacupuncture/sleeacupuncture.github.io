@@ -573,6 +573,39 @@ nav {
   color: rgba(255,255,255,.7);
 }
 
+.bloodflow details {
+  margin-top: var(--space-sm);
+}
+
+.bloodflow summary {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-base);
+  color: rgba(255,255,255,.9);
+  cursor: pointer;
+  padding: var(--space-xs) 0;
+  list-style: none;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  margin-bottom: var(--space-sm);
+}
+
+.bloodflow summary::-webkit-details-marker {
+  display: none;
+}
+
+.bloodflow summary::before {
+  content: "▸ ";
+  color: var(--color-accent);
+}
+
+.bloodflow details[open] summary::before {
+  content: "▾ ";
+}
+
+.bloodflow summary:hover {
+  color: rgba(255,255,255,.95);
+}
+
 /* ── Signature Cards ── */
 .signature-grid {
   display: grid;
