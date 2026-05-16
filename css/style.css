@@ -773,9 +773,16 @@ nav {
 /* ── Contact Grid ── */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
   margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 48rem) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
 }
 
 .contact-info h3,
@@ -806,21 +813,39 @@ nav {
 
 .contact-ctas {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: var(--space-sm);
   margin-top: var(--space-lg);
+}
+
+@media (min-width: 48rem) {
+  .contact-ctas {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 }
 
 .contact-cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: var(--fs-base);
-  white-space: nowrap;
+  white-space: normal;
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--radius);
   transition: all .2s;
+  width: 100%;
+}
+
+@media (min-width: 40rem) {
+  .contact-cta {
+    width: auto;
+    white-space: nowrap;
+  }
 }
 
 .contact-cta-primary {
