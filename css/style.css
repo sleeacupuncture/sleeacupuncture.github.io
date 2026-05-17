@@ -216,6 +216,9 @@ nav {
   border-bottom: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
 }
+.nav-menu.open {
+  display: flex;
+}
 
 .nav-links {
   display: flex;
