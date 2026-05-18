@@ -3,6 +3,27 @@
 (function () {
   'use strict';
 
+  // Language auto-detection and redirection
+  (function () {
+    // Only run on the root index page
+    const path = window.location.pathname;
+    const isRoot = path === '/' || path === '/index.html' || path.endsWith('.github.io/');
+    if (!isRoot) return;
+
+    // Skip if user has already been redirected in this session
+    if (sessionStorage.getItem('lang_redirected')) return;
+
+    const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+    
+    if (userLang.startsWith('ko')) {
+      sessionStorage.setItem('lang_redirected', 'true');
+      window.location.href = '/ko/';
+    } else if (userLang.startsWith('zh')) {
+      sessionStorage.setItem('lang_redirected', 'true');
+      window.location.href = '/zh/';
+    }
+  })();
+
   // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const menu = document.querySelector('.nav-menu');
