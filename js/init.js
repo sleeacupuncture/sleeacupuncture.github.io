@@ -64,6 +64,39 @@
     }
   }
 
+  // Language Dropdown Toggle (Mobile/Touch)
+  const langSwitcher = document.getElementById('lang-switcher');
+  if (langSwitcher) {
+    const langToggle = langSwitcher.querySelector('.lang-toggle');
+    
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = langSwitcher.classList.contains('open');
+      langSwitcher.classList.toggle('open', !isOpen);
+      langToggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+      if (langSwitcher.classList.contains('open')) {
+        langSwitcher.classList.remove('open');
+        langToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close menu and dropdown on link click
+    langSwitcher.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        langSwitcher.classList.remove('open');
+        langToggle.setAttribute('aria-expanded', 'false');
+        if (toggle && menu) {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('open');
+        }
+      });
+    });
+  }
+
   // Active nav link highlighting on scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');

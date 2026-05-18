@@ -1094,37 +1094,96 @@ footer {
   color: var(--color-text-muted);
 }
 
-/* ── Language Switcher ── */
+/* ── Language Switcher Dropdown ── */
 .nav-lang {
+  position: relative;
   display: flex;
   align-items: center;
   padding: var(--space-sm);
 }
 
-.lang-switcher {
-  display: flex;
+.lang-toggle {
+  display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
   background: var(--color-bg-alt);
-  padding: 4px 12px;
-  border-radius: 100px;
+  color: var(--color-text);
   border: 1px solid var(--color-border);
-}
-
-.lang-link {
+  padding: 6px 12px;
+  border-radius: 100px;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.lang-toggle:hover {
+  background: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.lang-toggle-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.lang-toggle-arrow {
+  transition: transform 0.2s;
   color: var(--color-text-muted);
-  transition: color 0.2s;
 }
 
-.lang-link:hover {
+.lang-dropdown {
+  position: absolute;
+  top: 100%;
+  left: var(--space-sm);
+  right: var(--space-sm);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  margin-top: 8px;
+  padding: 8px 0;
+  z-index: 1000;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease-out;
+}
+
+.nav-lang.open .lang-dropdown,
+.nav-lang:focus-within .lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-lang.open .lang-toggle-arrow {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.lang-dropdown li a:hover {
+  background: var(--color-bg-alt);
   color: var(--color-primary);
 }
 
-.lang-link.active {
+.lang-dropdown li a.active {
+  background: rgba(74, 122, 80, 0.1);
   color: var(--color-primary);
+  font-weight: 600;
 }
 
 @media (min-width: 64rem) {
@@ -1132,5 +1191,27 @@ footer {
     padding: 0;
     margin-left: var(--space-sm);
   }
+
+  .nav-lang:hover .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-lang:hover .lang-toggle-arrow {
+    transform: rotate(180deg);
+  }
+
+  .lang-toggle {
+    width: auto;
+    justify-content: center;
+  }
+
+  .lang-dropdown {
+    left: auto;
+    right: 0;
+    width: 140px;
+  }
 }
+
 
