@@ -76,7 +76,7 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--fs-base);
-  line-height: 1.6;
+  line-height: 1.75;
   color: var(--color-text);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
@@ -219,6 +219,9 @@ nav {
 .nav-menu.open {
   display: flex;
 }
+.nav-toggle[aria-expanded="true"] + .nav-menu {
+  display: flex;
+}
 
 .nav-links {
   display: flex;
@@ -247,6 +250,7 @@ nav {
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: var(--space-xs);
 }
 
 .nav-cta {
@@ -416,6 +420,7 @@ nav {
   color: var(--color-white);
   line-height: 1.2;
   margin-bottom: var(--space-sm);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
@@ -465,6 +470,13 @@ nav {
   background: rgba(255, 255, 255, 0.15);
   border-color: var(--color-white);
   color: var(--color-white);
+}
+
+.nav-cta:active,
+.hero-cta:active,
+.bio-cta:active,
+.floating-cta:active {
+  transform: scale(0.98);
 }
 
 @media (min-width: 40rem) {
