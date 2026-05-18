@@ -488,6 +488,7 @@ nav {
 @media (min-width: 48rem) {
   .hero-ctas {
     flex-direction: row;
+    justify-content: center;
   }
 
   .hero {
@@ -502,6 +503,12 @@ nav {
   transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.6);
   animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.hero-scroll:hover {
+  color: var(--color-white);
 }
 
 @keyframes bounce {
