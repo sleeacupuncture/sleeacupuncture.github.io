@@ -17,7 +17,7 @@
     toggle.addEventListener('click', () => toggleMenu());
 
     // Close menu on link click
-    menu.querySelectorAll('.nav-link').forEach((link) => {
+    menu.querySelectorAll('.nav-link, .lang-link').forEach((link) => {
       link.addEventListener('click', () => {
         toggle.setAttribute('aria-expanded', 'false');
         menu.classList.remove('open');
