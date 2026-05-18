@@ -79,6 +79,6 @@ Sunday : Appointment Only
 
 
 ------------------------------------------------
-© Copyright 2013 by Dr. Lee's Acupuncture Clinic
+© Copyright 2013 by Dr. S. Lee Acupuncture Clinic
 
 Dr. Lee & Clinic | Conditions We Treat | Contact Us
