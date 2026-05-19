@@ -195,10 +195,10 @@ nav {
 .nav-brand {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: var(--fs-lg);
   color: var(--color-text);
   white-space: nowrap;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   flex: 1;
 }
 .nav-brand:hover {
