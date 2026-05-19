@@ -1,4 +1,5 @@
-Dr. Lee’s Acupuncture Clinic
+# Dr. S Lee's Acupuncture Clinic
+
 (718) 631-1060 cmdslee@gmail.com
 
 ---------------------------------------------------
@@ -58,7 +59,7 @@ This treatment can be applied to treat neck problems and facial rejuvenation tog
 Contact Us
 ==========
 
-Dr. Lee’s Acupuncture Clinic
+Dr. S Lee's Acupuncture Clinic
 
 (718) 631-1060
 218-14 Northern Blvd., Suite #200, Bayside, NY 11361
@@ -79,6 +80,6 @@ Sunday : Appointment Only
 
 
 ------------------------------------------------
-© Copyright 2013 by Dr. S. Lee Acupuncture Clinic
+© Copyright 2013 by Dr. S Lee's Acupuncture Clinic
 
 Dr. Lee & Clinic | Conditions We Treat | Contact Us

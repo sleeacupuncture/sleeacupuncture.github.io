@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static single-page website for Dr. S. Lee Acupuncture Clinic (`sleeacupuncture.com`), deployed to GitHub Pages. Vanilla HTML5/CSS3/JS — no framework, no build step, no package manager.
+Static single-page website for Dr. S Lee's Acupuncture Clinic (`sleeacupuncture.com`), deployed to GitHub Pages. Vanilla HTML5/CSS3/JS — no framework, no build step, no package manager.
 
 ## Key Files
 
