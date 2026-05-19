@@ -18,8 +18,8 @@
   --color-white: #fff;
   --color-review-accent: #4a7a50;
 
-  --font-heading: "Montserrat", system-ui, sans-serif;
-  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-heading: "Montserrat", "Pretendard", "Noto Sans SC", system-ui, sans-serif;
+  --font-body: "Pretendard", "Noto Sans SC", "Source Sans 3", system-ui, sans-serif;
 
   --fs-base: 1.125rem;
   --fs-sm: 0.875rem;
