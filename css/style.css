@@ -329,7 +329,7 @@ nav {
     align-items: center;
     background: none;
     padding: 0;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     border-bottom: none;
     box-shadow: none;
   }
@@ -338,7 +338,6 @@ nav {
     flex-direction: row;
     align-items: center;
     gap: var(--space-md);
-    margin-right: var(--space-lg);
   }
 
   .nav-link {
