@@ -199,7 +199,6 @@ nav {
   color: var(--color-text);
   white-space: nowrap;
   letter-spacing: -0.02em;
-  flex: 1;
 }
 .nav-brand:hover {
   color: var(--color-primary);
@@ -319,10 +318,6 @@ nav {
 }
 
 @media (min-width: 68rem) {
-  .nav-brand {
-    flex: 1;
-  }
-
   .nav-toggle {
     display: none;
   }
@@ -334,17 +329,16 @@ nav {
     align-items: center;
     background: none;
     padding: 0;
-    gap: var(--space-md);
+    gap: var(--space-lg);
     border-bottom: none;
     box-shadow: none;
-    flex: 2;
-    justify-content: center;
   }
 
   .nav-links {
     flex-direction: row;
     align-items: center;
-    gap: var(--space-sm);
+    gap: var(--space-md);
+    margin-right: var(--space-lg);
   }
 
   .nav-link {
@@ -362,8 +356,6 @@ nav {
     align-items: center;
     gap: var(--space-xs);
     width: auto;
-    flex: 1;
-    justify-content: flex-end;
   }
 
   .nav-cta {
